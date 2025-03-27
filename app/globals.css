@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+
+@layer base {
+  :root {
+    --color-light-hover: #fcf4ff;
+    --color-dark-hover: #2a004a;
+    --color-dark-theme: #11001F;
+  }
+}
+
+@layer utilities {
+  .bg-light-hover { background-color: var(--color-light-hover); }
+  .bg-dark-hover { background-color: var(--color-dark-hover); }
+  .bg-dark-theme { background-color: var(--color-dark-theme); }
+  
+  .font-outfit {
+    font-family: var(--font-outfit), sans-serif;
+  }
+  .font-ovo {
+    font-family: var(--font-ovo), serif;
+  }
+}
