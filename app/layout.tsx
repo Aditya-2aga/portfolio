@@ -27,9 +27,9 @@ export default function RootLayout({
   return (
     <html 
       lang="en" 
-      className={`${outfitFont.variable} ${ovoFont.variable}`} // Changed to .variable
+      className="scroll-smooth" 
     >
-      <body className="antialiased">
+      <body className={`${outfitFont.variable} ${ovoFont.variable} antialiased leading-8 overflow-x-hidden`}>
         {children}
       </body>
     </html>
