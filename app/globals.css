@@ -11,6 +11,8 @@
 
 @layer utilities {
   .bg-light-hover { background-color: var(--color-light-hover); }
+  .hover\:bg-light-hover:hover { background-color: var(--color-light-hover); }
+  .hover\:bg-dark-hover:hover { background-color: var(--color-dark-hover); }
   .bg-dark-hover { background-color: var(--color-dark-hover); }
   .bg-dark-theme { background-color: var(--color-dark-theme); }
   
@@ -19,5 +21,33 @@
   }
   .font-ovo {
     font-family: var(--font-ovo), serif;
+  }
+
+  .shadow-black {
+    box-shadow: 4px 4px 0 #000;
+  }
+
+  .shadow-white {
+    box-shadow: 4px 4px 0 #fff;
+  }
+
+  .hover\:shadow-black:hover {
+    box-shadow: 4px 4px 0 #000;
+  }
+
+  .hover\:shadow-white:hover {
+    box-shadow: 4px 4px 0 #fff;
+  }
+
+  .grid-cols-auto {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@layer components {
+  .transition-hover {
+    transition-property: background-color, transform;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
