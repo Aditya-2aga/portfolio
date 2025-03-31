@@ -78,24 +78,28 @@ export const assets = {
 
 export const workData = [
     {
-        title: 'Frontend project',
-        description: 'Web Design',
+        title: 'RageAI',
+        description: 'MERN App',
         bgImage: '/work-1.png',
+        link: 'https://github.com/Aditya-2aga/RAGEai'
     },
     {
-        title: 'Geo based app',
-        description: 'Mobile App',
+        title: 'SeekhLo',
+        description: 'Frontend Website',
         bgImage: '/work-2.png',
+        link: 'https://seekh-lo.vercel.app/'
     },
     {
-        title: 'Photography site',
-        description: 'Web Design',
+        title: 'Baggers',
+        description: 'Backend Project',
         bgImage: '/work-3.png',
+        link: 'https://github.com/Aditya-2aga/Baggers'
     },
     {
-        title: 'UI/UX designing',
-        description: 'UI/UX Design',
+        title: '3D Models',
+        description: 'Blender 3D Models',
         bgImage: '/work-4.png',
+        link: 'https://drive.google.com/drive/folders/1EwVn-NAZDI_IdYlB5eDPD5vaQ_QtgQqz?usp=drive_link'
     },
 ]
 
