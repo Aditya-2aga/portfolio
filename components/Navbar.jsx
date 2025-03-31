@@ -53,9 +53,6 @@ const Navbar = () => {
           <li>
             <a href="#projects">My Projects</a>
           </li>
-          <li>
-            <a href="#contact">Contact me</a>
-          </li>
         </ul>
 
         <div className="flex items-center gap-4">
