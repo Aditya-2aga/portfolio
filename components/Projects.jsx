@@ -2,7 +2,7 @@ import Image from "next/image";
 import { assets, workData } from "@/assets/assets";
 import React from "react";
 
-const Projects = () => {
+const Projects = ({isDarkMode}) => {
   return (
     <div id="projects" className="w-full px-[12%] py-10 scroll-mt-20">
       <h4 className="text-center mb-2 text-lg font-ovo">Portfolio</h4>
@@ -12,7 +12,7 @@ const Projects = () => {
         showcasing my expertise in full stack development and designing.
       </p>
 
-      <div className="grid grid-cols-auto my-10 gap-5">
+      <div className={`grid grid-cols-auto my-10 gap-5 ${isDarkMode ? 'text-black' : ''}`}>
         {workData.map((project, index) => (
           <div
             className="aspect-square bg-no-repeat bg-cover bg-center rounded-lg 
@@ -38,9 +38,11 @@ const Projects = () => {
           </div>
         ))}
       </div>
-      <a href="#" className="w-max flex items-center justify-center gap-2 
-      text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 
-      mx-auto my-20 hover:bg-light-hover duration-500">Show more <Image src={assets.right_arrow_bold} alt="more" className="w-4"/> </a>
+      <a href="#" className={`w-max flex items-center justify-center gap-2 
+       border-[0.5px]  rounded-full py-3 px-10 
+       ${isDarkMode? 'border-white' : 'border-gray-700'}
+      mx-auto my-20 ${isDarkMode ? 'hover:bg-dark-hover' : 'hover:bg-light-hover'}
+      ${isDarkMode ? 'text-white/80' : 'text-gray-700'} duration-500`}>Show more <Image src={isDarkMode ? assets.right_arrow_bold_dark : assets.right_arrow_bold} alt="more" className="w-4"/> </a>
     </div>
   );
 };

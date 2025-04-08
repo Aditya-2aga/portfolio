@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { assets } from "@/assets/assets";
-import {React, useState} from "react";
+import { React, useState } from "react";
 
-const Contact = () => {
-    const [result, setResult] = useState("");
+const Contact = ({ isDarkMode }) => {
+  const [result, setResult] = useState("");
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -14,7 +14,7 @@ const Contact = () => {
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
-      body: formData
+      body: formData,
     });
 
     const data = await response.json();
@@ -30,8 +30,10 @@ const Contact = () => {
   return (
     <div
       id="contact"
-      className='w-full px-[12%] py-10 scroll-mt-20 bg-[url("/footer-bg-color.png")] bg-no-repeat
-     bg-center bg-[length:90%_auto]'
+      className={`w-full px-[12%] py-10 scroll-mt-20 ${
+        isDarkMode ? "bg-none" : 'bg-[url("/footer-bg-color.png")]'
+      } bg-no-repeat
+     bg-center bg-[length:90%_auto]`}
     >
       <h4 className="text-center mb-2 text-lg font-ovo">Get in touch</h4>
       <h2 className="text-center text-5xl font-ovo">Contact me</h2>
@@ -47,28 +49,43 @@ const Contact = () => {
             type="text"
             placeholder="Enter your name"
             required
-            name='name'
-            className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
+            name="name"
+            className={`flex-1 p-3 outline-none border-[0.5px] rounded-md ${
+              isDarkMode ? "text-white" : ""
+            }
+          ${isDarkMode ?'bg-dark-hover' :'bg-white'}
+          ${isDarkMode ?'border-white/90' :'border-gray-400'}`}
           />
           <input
             type="email"
             placeholder="Enter your email"
             required
-            name='email'
-            className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
+            name="email"
+            className={`flex-1 p-3 outline-none border-[0.5px] rounded-md ${
+              isDarkMode ? "text-white" : ""
+            }
+            ${isDarkMode ?'bg-dark-hover' :'bg-white'}
+          ${isDarkMode ?'border-white/90' :'border-gray-400'}`}
           />
         </div>
         <textarea
           rows="6"
           placeholder="Write your message"
           required
-          name='message'
-          className="w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6"
+          name="message"
+          className={`w-full p-4 outline-none border-[0.5px] rounded-md mb-6 ${
+            isDarkMode ? "text-white" : ""
+          }
+          ${isDarkMode ?'bg-dark-hover' :'bg-white'}
+          ${isDarkMode ?'border-white/90' :'border-gray-400'}`}
         ></textarea>
         <button
           type="submit"
-          className="py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80
-         text-white rounded-full mx-auto hover:bg-black duration-500"
+          className={`py-3 px-8 w-max flex items-center justify-between gap-2 
+          rounded-full mx-auto duration-500 text-white
+         ${isDarkMode ? 'bg-transparent':'bg-black/80'}
+         ${isDarkMode? 'border-[0.5px]':''}
+         ${isDarkMode? 'hover:bg-dark-hover': 'hover:bg-black'}`}
         >
           Send{" "}
           <Image alt="Arrow" src={assets.right_arrow_white} className="w-4" />

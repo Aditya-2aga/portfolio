@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { assets, serviceData } from "@/assets/assets";
 import React from "react";
 
-const Services = () => {
+const Services = ({isDarkMode}) => {
   return (
     <div id="services" className="w-full px-[12%] py-10 scroll-mt-20">
       <h4 className="text-center mb-2 text-lg font-ovo">What I offer</h4>
@@ -16,12 +16,13 @@ const Services = () => {
         {serviceData.map(({ icon, title, description, link }, index) => (
           <div
             key={index}
-            className="border border-gray-400 rounded-lg px-9 py-12 cursor-pointer hover:bg-light-hover
-                        hover:-translate-y-1 duration-500 hover:shadow-black"
+            className={`border ${isDarkMode? 'border-white' : 'border-gray-700'} rounded-lg px-9 py-12 cursor-pointer 
+                        hover:-translate-y-1 duration-500 ${isDarkMode ? 'hover:bg-dark-hover' : 'hover:bg-light-hover'}
+                        ${isDarkMode ? 'hover:shadow-white' : 'hover:shadow-black'}`}
           >
             <Image src={icon} alt="Title" className="w-10" />
-            <h3 className="my-4 text-lg text-gray-700">{title}</h3>
-            <p className="text-gray-600 text-sm leading-5">{description}</p>
+            <h3 className={`my-4 text-lg ${isDarkMode ? 'text-white' :'text-gray-700'}`}>{title}</h3>
+            <p className={`${isDarkMode ? 'text-white/80' : 'text-gray-600 '} text-sm leading-5`}>{description}</p>
             <a href={link} className='flex items-center gap-2 text-sm mt-5'>
                 Read more <Image src={assets.right_arrow} alt='' className='w-4'/>
             </a>
