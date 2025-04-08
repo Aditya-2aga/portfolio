@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { assets } from "@/assets/assets";
 import { React, useState } from "react";
+import { motion } from "motion/react";
 
 const Contact = ({ isDarkMode }) => {
   const [result, setResult] = useState("");
@@ -28,24 +29,46 @@ const Contact = ({ isDarkMode }) => {
     }
   };
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1 }}
       id="contact"
       className={`w-full px-[12%] py-10 scroll-mt-20 ${
         isDarkMode ? "bg-none" : 'bg-[url("/footer-bg-color.png")]'
       } bg-no-repeat
      bg-center bg-[length:90%_auto]`}
     >
-      <h4 className="text-center mb-2 text-lg font-ovo">Get in touch</h4>
-      <h2 className="text-center text-5xl font-ovo">Contact me</h2>
-      <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-ovo">
+      <motion.h4 
+      initial={{ opacity: 0, y: -20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.3 }}
+      className="text-center mb-2 text-lg font-ovo">Get in touch</motion.h4>
+      <motion.h2
+      initial={{ opacity: 0, y: -20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.5 }}
+      className="text-center text-5xl font-ovo">Contact me</motion.h2>
+      <motion.p
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.5, delay: 0.7 }}
+      className="text-center max-w-2xl mx-auto mt-5 mb-12 font-ovo">
         Got a project in mind or just want to chat about tech? I'm all ears! I
         believe great ideas come from collaboration, so don't hesitate to reach
         out. I typically respond within 24 hours and look forward to connecting
         with fellow developers, potential clients, and tech enthusiasts.
-      </p>
-      <form onSubmit={onSubmit} className="max-w-2xl mx-auto">
+      </motion.p>
+      <motion.form
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.5, delay: 0.9 }}
+      onSubmit={onSubmit} className="max-w-2xl mx-auto">
         <div className="grid grid-cols-2 gap-6 mt-10 mb-8">
-          <input
+          <motion.input
+          initial={{ x:-50, opacity: 0 }}
+          whileInView={{ x:0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 1.1 }}
             type="text"
             placeholder="Enter your name"
             required
@@ -53,10 +76,13 @@ const Contact = ({ isDarkMode }) => {
             className={`flex-1 p-3 outline-none border-[0.5px] rounded-md ${
               isDarkMode ? "text-white" : ""
             }
-          ${isDarkMode ?'bg-dark-hover' :'bg-white'}
-          ${isDarkMode ?'border-white/90' :'border-gray-400'}`}
+          ${isDarkMode ? "bg-dark-hover" : "bg-white"}
+          ${isDarkMode ? "border-white/90" : "border-gray-400"}`}
           />
-          <input
+          <motion.input
+          initial={{ x:50, opacity: 0 }}
+          whileInView={{ x:0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 1.2 }}
             type="email"
             placeholder="Enter your email"
             required
@@ -64,11 +90,14 @@ const Contact = ({ isDarkMode }) => {
             className={`flex-1 p-3 outline-none border-[0.5px] rounded-md ${
               isDarkMode ? "text-white" : ""
             }
-            ${isDarkMode ?'bg-dark-hover' :'bg-white'}
-          ${isDarkMode ?'border-white/90' :'border-gray-400'}`}
+            ${isDarkMode ? "bg-dark-hover" : "bg-white"}
+          ${isDarkMode ? "border-white/90" : "border-gray-400"}`}
           />
         </div>
-        <textarea
+        <motion.textarea
+        initial={{ y:100, opacity: 0 }}
+        whileInView={{ y:0, opacity: 1 }}
+        transition={{ duration: 0.6, delay: 1.3 }}
           rows="6"
           placeholder="Write your message"
           required
@@ -76,23 +105,25 @@ const Contact = ({ isDarkMode }) => {
           className={`w-full p-4 outline-none border-[0.5px] rounded-md mb-6 ${
             isDarkMode ? "text-white" : ""
           }
-          ${isDarkMode ?'bg-dark-hover' :'bg-white'}
-          ${isDarkMode ?'border-white/90' :'border-gray-400'}`}
-        ></textarea>
-        <button
+          ${isDarkMode ? "bg-dark-hover" : "bg-white"}
+          ${isDarkMode ? "border-white/90" : "border-gray-400"}`}
+        ></motion.textarea>
+        <motion.button
+        whileHover={{scale:1.05}}
+        transition={{duration:0.3}}
           type="submit"
           className={`py-3 px-8 w-max flex items-center justify-between gap-2 
           rounded-full mx-auto duration-500 text-white
-         ${isDarkMode ? 'bg-transparent':'bg-black/80'}
-         ${isDarkMode? 'border-[0.5px]':''}
-         ${isDarkMode? 'hover:bg-dark-hover': 'hover:bg-black'}`}
+         ${isDarkMode ? "bg-transparent" : "bg-black/80"}
+         ${isDarkMode ? "border-[0.5px]" : ""}
+         ${isDarkMode ? "hover:bg-dark-hover" : "hover:bg-black"}`}
         >
           Send{" "}
           <Image alt="Arrow" src={assets.right_arrow_white} className="w-4" />
-        </button>
+        </motion.button>
         <p className="mt-4">{result}</p>
-      </form>
-    </div>
+      </motion.form>
+    </motion.div>
   );
 };
 
