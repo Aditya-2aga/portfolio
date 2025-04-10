@@ -87,14 +87,14 @@ const Projects = ({ isDarkMode }) => {
       }
       ${isDarkMode ? "text-white/80" : "text-gray-700"} duration-500`}
       >
-        Show more{" "}
+        <a href="https://linktr.ee/Aditya_projects">Show more{" "}
         <Image
           src={
             isDarkMode ? assets.right_arrow_bold_dark : assets.right_arrow_bold
           }
           alt="more"
           className="w-4"
-        />{" "}
+        />{" "}</a>
       </motion.a>
     </motion.div>
   );
