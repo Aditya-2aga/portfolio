@@ -78,7 +78,7 @@ const Projects = ({ isDarkMode }) => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.5, delay: 1.1 }}
-        href="#"
+        href="https://linktr.ee/Aditya_projects"
         className={`w-max flex items-center justify-center gap-2 
        border-[0.5px]  rounded-full py-3 px-10 
        ${isDarkMode ? "border-white" : "border-gray-700"}
@@ -87,14 +87,14 @@ const Projects = ({ isDarkMode }) => {
       }
       ${isDarkMode ? "text-white/80" : "text-gray-700"} duration-500`}
       >
-        <a href="https://linktr.ee/Aditya_projects">Show more{" "}
+        Show more{" "}
         <Image
           src={
             isDarkMode ? assets.right_arrow_bold_dark : assets.right_arrow_bold
           }
           alt="more"
           className="w-4"
-        />{" "}</a>
+        />{" "}
       </motion.a>
     </motion.div>
   );
