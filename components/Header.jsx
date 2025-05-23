@@ -25,7 +25,7 @@ const Header = ({isDarkMode}) => {
       whileInView={{ y:0, opacity:1 }}
       transition={{duration: 0.8, delay:0.5}}
       className="text-3xl sm:text-6xl lg:text-[66px] font-ovo">
-        Full stack web developer & Sofware developer
+        Full stack web developer & Software developer
       </motion.h1>
       <motion.p 
       initial={{ opacity:0 }}
