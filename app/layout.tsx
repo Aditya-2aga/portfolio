@@ -1,22 +1,23 @@
 import type { Metadata } from "next";
 import { Outfit as OutfitFont, Ovo as OvoFont } from "next/font/google";
 import "./globals.css";
+import SmoothScrolling from "@/components/SmoothScrolling";
 
 const outfitFont = OutfitFont({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  variable: '--font-outfit' // Add this line
+  variable: '--font-outfit'
 });
 
 const ovoFont = OvoFont({
   subsets: ["latin"],
   weight: ["400"],
-  variable: '--font-ovo' // Add this line
+  variable: '--font-ovo'
 });
 
 export const metadata: Metadata = {
-  title: "Aditya Modanwal",
-  description: "Hello, welcome to my portfolio",
+  title: "Aditya Modanwal | Product Manager",
+  description: "Portfolio of Aditya Modanwal, Technical Product Manager.",
 };
 
 export default function RootLayout({
@@ -25,13 +26,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html 
-      lang="en" 
-      className="scroll-smooth" 
-    >
+    <html lang="en">
       <body className={`${outfitFont.variable} ${ovoFont.variable} antialiased leading-8 overflow-x-hidden
-      dark:{bg-dark-theme} dark:{text-white}`}>
-        {children}
+      dark:bg-[#0f172a] dark:text-white bg-slate-50 text-slate-900 transition-colors duration-300`}>
+        <SmoothScrolling>
+          {children}
+        </SmoothScrolling>
       </body>
     </html>
   );

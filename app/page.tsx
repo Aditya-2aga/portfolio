@@ -1,46 +1,25 @@
-"use client"
-import Navbar from "../components/Navbar";
-import Header from "../components/Header";
-import About from "../components/About";
-import Services from "../components/Services";
-import Projects from "../components/Projects";
-import Contact from "../components/Contact";
-import Footer from "../components/Footer";
-import { useState, useEffect } from "react";
+"use client";
+
+import FloatingNav from "@/components/FloatingNav";
+import HeroStory from "@/components/HeroStory";
+import ProductThinking from "@/components/ProductThinking";
+import ExperienceTimeline from "@/components/ExperienceTimeline";
+import FeaturedProjects from "@/components/FeaturedProjects";
+import Skills from "@/components/Skills";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
-
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  useEffect(() => {
-    const storedTheme = localStorage.getItem('theme');
-    if(storedTheme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)){
-      setIsDarkMode(true);
-    } else{
-      setIsDarkMode(false);
-    }
-  },[])
-
-  useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add("dark");
-      localStorage.theme = 'dark';
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.theme = '';
-    }
-  }
-  , [isDarkMode]);
-
   return (
-    <>
-    <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode}/>
-    <Header isDarkMode={isDarkMode}/>
-    <About isDarkMode={isDarkMode}/>
-    <Services isDarkMode={isDarkMode}/>
-    <Projects isDarkMode={isDarkMode}/>
-    <Contact isDarkMode={isDarkMode}/>
-    <Footer isDarkMode={isDarkMode}/>
-    </>
+    <main className="w-full min-h-screen bg-slate-50 relative">
+      <FloatingNav />
+      <HeroStory />
+      {/* <ProductThinking /> */}
+      <ExperienceTimeline />
+      <FeaturedProjects />
+      <Skills />
+      <Contact />
+      <Footer />
+    </main>
   );
 }
