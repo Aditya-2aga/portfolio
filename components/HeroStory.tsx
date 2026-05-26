@@ -42,10 +42,11 @@ export default function HeroStory() {
           {/* Buttons */}
           <div className="flex flex-wrap items-center gap-5 mb-14">
             <a 
-              href="#projects" 
+              href="/Resume-job.pdf"
+              download
               className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-full flex items-center gap-2 transition-all shadow-[0_10px_20px_rgba(0,0,0,0.1)] text-[11px] tracking-[0.2em] font-bold"
             >
-              VIEW WORK <CodeXml className="w-4 h-4 ml-1" />
+              RESUME <CodeXml className="w-4 h-4 ml-1" />
             </a>
             <a 
               href="#contact" 
