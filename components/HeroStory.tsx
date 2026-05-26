@@ -27,12 +27,12 @@ export default function HeroStory() {
             className="text-sm md:text-base font-bold tracking-[0.3em] text-slate-400 mb-6 uppercase flex items-center gap-4"
           >
             <span className="w-12 h-[2px] bg-slate-300 block"></span>
-            Hi, I&apos;m Aditya Modanwal
+            Product manager
           </motion.h3>
           
           <h1 className="flex flex-wrap font-black tracking-tighter mb-6 font-outfit uppercase leading-[1.05]">
-            <span className="text-[3.5rem] md:text-[4.5rem] lg:text-[5.5rem] text-slate-800 mr-4">PRODUCT</span>
-            <span className="text-[3.5rem] md:text-[4.5rem] lg:text-[5.5rem] text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">MANAGER</span>
+            <span className="text-[3.5rem] md:text-[4.5rem] lg:text-[5.5rem] text-slate-800 mr-4">Aditya</span>
+            <span className="text-[3.5rem] md:text-[4.5rem] lg:text-[5.5rem] text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Modanwal</span>
           </h1>
           
           <p className="text-[15px] md:text-lg text-slate-600 font-ovo font-light max-w-[480px] leading-relaxed mb-10">

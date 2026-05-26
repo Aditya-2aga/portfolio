@@ -2,7 +2,7 @@
 
 import FloatingNav from "@/components/FloatingNav";
 import HeroStory from "@/components/HeroStory";
-// import ProductThinking from "@/components/ProductThinking";
+import ProductThinking from "@/components/ProductThinking";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import Skills from "@/components/Skills";
@@ -14,7 +14,7 @@ export default function Home() {
     <main className="w-full min-h-screen bg-slate-50 relative">
       <FloatingNav />
       <HeroStory />
-      {/* <ProductThinking /> */}
+      <ProductThinking />
       <ExperienceTimeline />
       <FeaturedProjects />
       <Skills />

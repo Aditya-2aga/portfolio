@@ -89,9 +89,9 @@ export const projectsData = [
     tagline: "Analytics Dashboard",
     description: "Trained and evaluated Logistic Regression, Random Forest, and XGBoost models on a 7,000-row telecom dataset; XGBoost achieved 82% accuracy and 0.86 AUC-ROC. Applied SHAP explainability to surface top churn drivers. Deployed a Streamlit dashboard enabling non-technical teams to query real-time churn probability.",
     tech: ["Python", "XGBoost", "SHAP", "Streamlit", "Pandas"],
-    link: "#",
+    link: "https://churn-app-calci.streamlit.app/",
     color: "#E5E7EB",
-    image: ""
+    image: "/work-5.png"
   }
 ];
 
