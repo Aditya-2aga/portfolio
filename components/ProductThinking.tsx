@@ -251,7 +251,7 @@ export default function ProductThinking() {
                 <span className="w-8 h-[2px] bg-indigo-400 block shadow-[0_0_10px_#8a33ff]"></span>
                 {phase.subtitle}
               </div>
-              <h2 className="text-5xl md:text-7xl font-black mb-6 text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.3)] tracking-tight">
+              <h2 className="text-4xl sm:text-5xl md:text-7xl font-black mb-6 text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.3)] tracking-tight">
                 {phase.title}
               </h2>
               <p className="text-lg md:text-xl font-ovo text-slate-300 leading-relaxed max-w-md">

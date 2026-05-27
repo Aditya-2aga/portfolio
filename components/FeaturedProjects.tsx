@@ -52,11 +52,18 @@ function ProjectCard({ project, index, progress, total }: { project: any, index:
   const scale = useTransform(progress, [index / total, 1], [1, 0.95]);
 
   return (
-    <div className="w-full flex justify-center sticky top-32 px-6 mb-24" style={{ paddingTop: yOffset }}>
+    <div className="w-full flex justify-center relative md:sticky top-auto md:top-32 px-4 md:px-6 mb-12 md:mb-24">
+      <style>{`
+        @media (min-width: 768px) {
+          .project-card-offset-${index} {
+            padding-top: ${yOffset}px !important;
+          }
+        }
+      `}</style>
       <motion.div 
         ref={cardRef}
         style={{ scale, backgroundColor: project.color }}
-        className="w-full max-w-6xl h-[70vh] rounded-3xl p-8 md:p-16 flex flex-col md:flex-row gap-8 shadow-2xl relative overflow-hidden"
+        className={`w-full max-w-6xl min-h-[70vh] h-auto md:h-[70vh] rounded-3xl p-8 md:p-16 flex flex-col md:flex-row gap-8 shadow-2xl relative overflow-hidden project-card-offset-${index}`}
       >
         {/* Decorative elements based on theme */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
