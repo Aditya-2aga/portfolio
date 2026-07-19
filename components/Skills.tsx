@@ -1,75 +1,58 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { skillsData } from "@/assets/data";
+import { skillsGroups } from "@/assets/data";
 
 export default function Skills() {
   return (
-    <section className="relative bg-[#0f172a] py-32 text-slate-50 overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent" />
-      <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+    <section className="py-32 bg-[#0f1115] relative z-10 border-t border-zinc-900">
+      <div className="max-w-[90rem] mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8 }}
-          className="mb-20 text-center"
+          transition={{ duration: 0.6 }}
+          className="mb-16 md:mb-24"
         >
-          <h2 className="text-4xl md:text-5xl font-bold font-outfit mb-4">
-            The Toolkit
+          <div className="flex items-center gap-4 mb-6">
+            <span className="w-12 h-[1px] bg-indigo-500 block"></span>
+            <span className="text-indigo-400 font-bold tracking-widest text-xs uppercase font-geist">Competencies</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-geist tracking-tight">
+            Core Skills & Tools
           </h2>
-          <p className="text-slate-400 font-ovo max-w-2xl mx-auto">
-            A blend of strategic product management frameworks and deep technical execution capabilities.
-          </p>
         </motion.div>
-        
-        <div className="grid md:grid-cols-3 gap-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="bg-slate-800/30 p-8 rounded-3xl border border-slate-700/50 hover:bg-slate-800/50 transition-colors"
-          >
-            <h3 className="text-2xl font-bold mb-6 text-indigo-400 font-outfit">Product Management</h3>
-            <div className="flex flex-wrap gap-2">
-              {skillsData.product.map(skill => (
-                <span key={skill} className="px-4 py-2 bg-slate-900 rounded-xl text-sm border border-slate-800 text-slate-300 shadow-inner">{skill}</span>
-              ))}
-            </div>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-slate-800/30 p-8 rounded-3xl border border-slate-700/50 hover:bg-slate-800/50 transition-colors"
-          >
-            <h3 className="text-2xl font-bold mb-6 text-indigo-400 font-outfit">Engineering & Data</h3>
-            <div className="flex flex-wrap gap-2">
-              {[...skillsData.languages, ...skillsData.frameworks].map(skill => (
-                <span key={skill} className="px-4 py-2 bg-slate-900 rounded-xl text-sm border border-slate-800 text-slate-300 shadow-inner">{skill}</span>
-              ))}
-            </div>
-          </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="bg-slate-800/30 p-8 rounded-3xl border border-slate-700/50 hover:bg-slate-800/50 transition-colors"
-          >
-            <h3 className="text-2xl font-bold mb-6 text-indigo-400 font-outfit">AI & Automation</h3>
-            <div className="flex flex-wrap gap-2">
-              {skillsData.aiAutomation.map(skill => (
-                <span key={skill} className="px-4 py-2 bg-slate-900 rounded-xl text-sm border border-slate-800 text-slate-300 shadow-inner">{skill}</span>
-              ))}
-            </div>
-          </motion.div>
+        <div className="flex flex-col border-t border-zinc-800">
+          {skillsGroups.map((group, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="flex flex-col md:flex-row md:items-start py-8 md:py-12 border-b border-zinc-800 group hover:bg-[#15171c] transition-colors"
+            >
+              <div className="md:w-1/3 mb-6 md:mb-0 md:pr-12">
+                <h3 className="text-xl md:text-2xl font-bold text-white font-geist group-hover:text-indigo-400 transition-colors">
+                  {group.title}
+                </h3>
+              </div>
+              
+              <div className="md:w-2/3">
+                <div className="flex flex-wrap gap-3">
+                  {group.skills.map((skill, i) => (
+                    <span 
+                      key={i} 
+                      className="px-5 py-2.5 bg-[#18181b] text-slate-300 font-inter text-sm md:text-base rounded-full border border-zinc-800/80 group-hover:border-zinc-700 hover:!border-indigo-500/50 hover:bg-indigo-500/10 hover:text-indigo-300 transition-all cursor-default shadow-sm"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

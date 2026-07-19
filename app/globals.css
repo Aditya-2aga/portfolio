@@ -1,60 +1,35 @@
 @import "tailwindcss";
 
+@theme {
+  --font-geist: var(--font-geist-sans);
+  --font-inter: var(--font-inter);
+}
+
 @layer base {
-  :root {
-    --color-light-hover: #fcf4ff;
-    --color-dark-hover: #2a004a;
-    --color-dark-theme: #11001F;
+  html {
+    scroll-behavior: smooth;
   }
-
-  html.dark {
-    color-scheme: dark;
-  }
-
-  html.dark body {
-    background-color: var(--color-dark-theme);
-  }
-}
-
-@layer utilities {
-  .bg-light-hover { background-color: var(--color-light-hover); }
-  .hover\:bg-light-hover:hover { background-color: var(--color-light-hover); }
-  .hover\:bg-dark-hover:hover { background-color: var(--color-dark-hover); }
-  .bg-dark-hover { background-color: var(--color-dark-hover); }
-  .bg-dark-theme { background-color: var(--color-dark-theme); }
   
-  .font-outfit {
-    font-family: var(--font-outfit), sans-serif;
-  }
-  .font-ovo {
-    font-family: var(--font-ovo), serif;
-  }
-
-  .shadow-black {
-    box-shadow: 4px 4px 0 #000;
+  body {
+    background-color: #fcfcfc;
+    color: #111827;
+    -webkit-font-smoothing: antialiased;
   }
 
-  .shadow-white {
-    box-shadow: 4px 4px 0 #fff;
-  }
-
-  .hover\:shadow-black:hover {
-    box-shadow: 4px 4px 0 #000;
-  }
-
-  .hover\:shadow-white:hover {
-    box-shadow: 4px 4px 0 #fff;
-  }
-
-  .grid-cols-auto {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  ::selection {
+    background: rgba(79, 70, 229, 0.2);
+    color: #4f46e5;
   }
 }
 
-@layer components {
-  .transition-hover {
-    transition-property: background-color, transform;
-    transition-duration: 300ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  }
+/* Typography styles for Prose (Light Mode Defaults) */
+.prose {
+  --tw-prose-body: #374151;
+  --tw-prose-headings: #111827;
+  --tw-prose-links: #4f46e5;
+  --tw-prose-bold: #111827;
+  --tw-prose-quotes: #6b7280;
+  --tw-prose-code: #1f2937;
+  --tw-prose-pre-code: #f3f4f6;
+  --tw-prose-pre-bg: #1f2937;
 }

@@ -1,23 +1,21 @@
 import type { Metadata } from "next";
-import { Outfit as OutfitFont, Ovo as OvoFont } from "next/font/google";
+import { Geist, Inter } from "next/font/google";
 import "./globals.css";
 import SmoothScrolling from "@/components/SmoothScrolling";
 
-const outfitFont = OutfitFont({
+const geistSans = Geist({
+  variable: "--font-geist",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: '--font-outfit'
 });
 
-const ovoFont = OvoFont({
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["400"],
-  variable: '--font-ovo'
 });
 
 export const metadata: Metadata = {
-  title: "Aditya Modanwal | Product Manager",
-  description: "Portfolio of Aditya Modanwal, Technical Product Manager.",
+  title: "Aditya Modanwal | Technical Product Manager",
+  description: "Portfolio of Aditya Modanwal, Technical Product Manager building AI-native SaaS products from 0->1.",
 };
 
 export default function RootLayout({
@@ -26,9 +24,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${outfitFont.variable} ${ovoFont.variable} antialiased leading-8 overflow-x-hidden
-      dark:bg-[#0f172a] dark:text-white bg-slate-50 text-slate-900 transition-colors duration-300`}>
+    <html lang="en" className="dark">
+      <body className={`${geistSans.variable} ${inter.variable} font-sans antialiased bg-[#0a0a0a] text-slate-200 overflow-x-hidden selection:bg-blue-500/30 selection:text-blue-200`}>
         <SmoothScrolling>
           {children}
         </SmoothScrolling>

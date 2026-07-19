@@ -2,6 +2,7 @@
 
 import { motion, useScroll } from "framer-motion";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function FloatingNav() {
   const { scrollY } = useScroll();
@@ -20,25 +21,29 @@ export default function FloatingNav() {
       transition={{ duration: 0.8, delay: 0.5 }}
       className={`fixed top-4 sm:top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ${
         isScrolled 
-          ? "w-[95%] sm:w-[90%] md:w-[600px] bg-white/80 backdrop-blur-xl shadow-lg rounded-full py-2 sm:py-3" 
+          ? "w-[95%] sm:w-[90%] md:w-[600px] bg-[#0f1115]/90 backdrop-blur-xl border border-zinc-800 shadow-2xl rounded-full py-2 sm:py-3" 
           : "w-full max-w-7xl bg-transparent py-4 sm:py-6"
       }`}
     >
       <div className={`px-4 sm:px-6 lg:px-8 flex justify-between items-center w-full ${isScrolled ? '' : 'mx-auto'}`}>
         {/* Logo */}
-        <div className={`font-outfit font-extrabold tracking-tight flex items-center transition-all ${isScrolled ? 'text-lg text-slate-900' : 'text-xl sm:text-2xl text-slate-900'}`}>
+        <Link href="/" className={`font-geist font-extrabold tracking-tight flex items-center transition-all ${isScrolled ? 'text-lg text-white' : 'text-xl sm:text-2xl text-slate-900'}`}>
           AM<span className="text-indigo-600">.</span>
-        </div>
+        </Link>
         
         {/* Links */}
-        <div className={`hidden md:flex gap-8 text-[13px] font-medium transition-all text-slate-600`}>
-          <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="hover:text-indigo-600 transition-colors">Home</a>
-          <a href="#experience" className="hover:text-indigo-600 transition-colors">Experience</a>
-          <a href="#projects" className="hover:text-indigo-600 transition-colors">Projects</a>
+        <div className={`hidden md:flex gap-8 text-[13px] font-medium transition-all ${isScrolled ? 'text-slate-400' : 'text-slate-600'} font-inter`}>
+          <a href="#about" className={`transition-colors ${isScrolled ? 'hover:text-white' : 'hover:text-indigo-600'}`}>About</a>
+          <a href="#products" className={`transition-colors ${isScrolled ? 'hover:text-white' : 'hover:text-indigo-600'}`}>Products</a>
+          <a href="#experience" className={`transition-colors ${isScrolled ? 'hover:text-white' : 'hover:text-indigo-600'}`}>Experience</a>
         </div>
 
         {/* Action Button */}
-        <a href="#contact" className={`hover:bg-indigo-700 text-white px-4 sm:px-6 py-2 rounded-full text-[10px] sm:text-[12px] font-bold tracking-widest transition-all ${isScrolled ? 'bg-indigo-600 shadow-md' : 'bg-indigo-600 shadow-lg'}`}>
+        <a href="#contact" className={`px-4 sm:px-6 py-2 rounded-full text-[10px] sm:text-[12px] font-bold tracking-widest transition-all font-geist ${
+          isScrolled 
+            ? 'bg-white text-slate-900 hover:bg-slate-200 shadow-lg' 
+            : 'bg-slate-900 text-white hover:bg-slate-800 shadow-md'
+        }`}>
           LET&apos;S CONNECT
         </a>
       </div>
