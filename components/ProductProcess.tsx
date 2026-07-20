@@ -116,6 +116,7 @@ export default function ProductProcess() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: wrapperRef.current,
+          pin: containerRef.current,
           start: "top top",
           end: "bottom bottom",
           scrub: 1,
@@ -152,7 +153,7 @@ export default function ProductProcess() {
   return (
     <section ref={wrapperRef} className="relative w-full h-[600vh] bg-[#020205] border-t border-zinc-900">
       
-      <div ref={containerRef} className="sticky top-0 w-full h-screen overflow-hidden font-inter text-white">
+      <div ref={containerRef} className="relative w-full h-screen overflow-hidden font-inter text-white">
         
         {/* 3D Canvas Background */}
         <div className="absolute inset-0 z-0 bg-[#020205]">
@@ -175,12 +176,12 @@ export default function ProductProcess() {
              <span className="text-indigo-400 font-bold tracking-widest text-xs uppercase font-geist">The Process Framework</span>
           </div>
 
-          <div className="w-full lg:w-5/12 relative h-[500px]">
+          <div className="w-full lg:w-5/12 relative h-[80vh] md:h-[500px]">
             {productProcess.map((stage, index) => (
               <div 
                 key={index}
                 ref={el => { textRefs.current[index] = el; }}
-                className="absolute top-1/2 -translate-y-1/2 left-0 w-full opacity-0 pointer-events-auto pr-6"
+                className="absolute inset-0 flex flex-col justify-start md:justify-center pt-8 md:pt-0 w-full opacity-0 pointer-events-auto pr-6"
               >
                 <div className="mb-8 flex items-end gap-4">
                   <span className="text-7xl font-bold font-geist text-zinc-800">0{index + 1}</span>
@@ -215,7 +216,7 @@ export default function ProductProcess() {
                     </div>
                   </div>
 
-                  <div className="pt-6 mt-6 border-t border-zinc-800/50">
+                  <div className="hidden md:block pt-6 mt-6 border-t border-zinc-800/50">
                      <h4 className="text-[10px] font-bold uppercase tracking-widest text-indigo-400 font-geist mb-3">In Practice</h4>
                      <p className="text-sm text-slate-400 font-inter leading-relaxed italic border-l-2 border-indigo-500/30 pl-4 py-1">
                        &ldquo;{stage.details.example}&rdquo;

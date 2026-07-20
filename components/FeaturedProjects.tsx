@@ -143,7 +143,7 @@ export default function FeaturedProjects() {
                   
                   {/* Mobile Button */}
                   <div className="block lg:hidden pt-8">
-                    <MagneticButton>
+                    <MagneticButton className="w-full flex">
                       <Link 
                         href={`/case-studies/${product.slug}`}
                         className="flex justify-center items-center gap-3 bg-slate-900 text-white hover:bg-slate-800 w-full py-5 rounded-full font-bold transition-colors font-inter text-sm shadow-md"

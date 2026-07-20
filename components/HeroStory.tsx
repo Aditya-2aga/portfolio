@@ -10,7 +10,7 @@ import userImage from "@/assets/user-image.png";
 
 export default function HeroStory() {
   return (
-    <section className="relative w-full min-h-screen flex flex-col justify-center bg-[#fcfcfc] overflow-hidden pt-20">
+    <section className="relative w-full min-h-screen flex flex-col justify-center bg-[#fcfcfc] overflow-hidden pt-20 pb-24 lg:pb-0">
       
       {/* Editorial Background Pattern */}
       <div className="absolute inset-0 z-0 opacity-40">

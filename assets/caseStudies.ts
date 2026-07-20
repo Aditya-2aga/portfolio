@@ -135,7 +135,7 @@ export const caseStudies: CaseStudy[] = [
         }
       },
       { type: "heading2", text: "Retrospective" },
-      { type: "paragraph", text: "Building NexFlow reinforced several product management principles. Simplicity wins—users consistently valued clarity over extensive feature sets. AI should support, not replace. Product visibility matters." },
+      { type: "paragraph", text: "Building NexFlow reinforced several product management principles. Simplicity wins-users consistently valued clarity over extensive feature sets. AI should support, not replace. Product visibility matters." },
       {
         type: "retrospective",
         data: {
@@ -145,7 +145,7 @@ export const caseStudies: CaseStudy[] = [
           ],
           techDebt: "Need to invest earlier in analytics and workflow insights rather than treating them as future enhancements.",
           lessons: [
-            "The best products don't succeed because they have the most features—they succeed because they solve the right problems with clarity and simplicity.",
+            "The best products don't succeed because they have the most features-they succeed because they solve the right problems with clarity and simplicity.",
             "AI features create value only when they remove meaningful friction."
           ]
         }
@@ -348,7 +348,7 @@ export const caseStudies: CaseStudy[] = [
           lessons: [
             "Discovery is more valuable than inventory size.",
             "Supply quality is often more important than supply quantity during early-stage growth.",
-            "Successful marketplaces are built by solving matching problems—not simply aggregating listings."
+            "Successful marketplaces are built by solving matching problems-not simply aggregating listings."
           ]
         }
       }

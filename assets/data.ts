@@ -18,7 +18,7 @@ export const featuredProducts = [
     primaryKPI: "15+ Active Internal Users",
     usersImpacted: "Product, Engineering, QA, Design",
     problem: "Our growing product, engineering, QA, and design teams were managing work across multiple disconnected tools, resulting in poor visibility, inconsistent planning, and fragmented communication.",
-    solution: "Led product discovery and roadmap planning for NexFlow—an internal platform that centralized project planning, sprint management, QA workflows, Kanban boards, role-based access, support ticketing, and AI-powered sprint effort prediction.",
+    solution: "Led product discovery and roadmap planning for NexFlow-an internal platform that centralized project planning, sprint management, QA workflows, Kanban boards, role-based access, support ticketing, and AI-powered sprint effort prediction.",
     impact: "Adopted by 15+ internal users, managing 20+ projects, tracking 500+ tasks, and vastly improving cross-functional collaboration.",
     metrics: [
       { label: "Projects Managed", value: "20+" },
@@ -123,7 +123,7 @@ export const productProcess = [
     details: {
       frameworks: ["User Interviews", "Problem Statements", "Opportunity Mapping"],
       deliverables: ["User Interviews", "Personas", "Opportunity Mapping"],
-      example: "Every roadmap should begin with understanding user pain—not assumptions."
+      example: "Every roadmap should begin with understanding user pain, not assumptions."
     },
     tools: ["Figma", "Notion", "Zoom"]
   },

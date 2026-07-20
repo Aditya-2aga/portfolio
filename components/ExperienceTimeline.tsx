@@ -65,7 +65,7 @@ export default function ExperienceTimeline() {
                 </div>
                 
                 {/* Mobile Header (Always visible on mobile) */}
-                <div className="xl:hidden p-6 flex justify-between items-center border-b border-slate-100">
+                <div className="xl:hidden p-6 flex justify-between items-center border-b border-slate-100 relative z-10">
                   <div className="flex flex-col">
                     <span className="text-slate-500 text-xs font-bold font-geist tracking-widest uppercase mb-1">{exp.period}</span>
                     <span className={`text-xl font-bold font-geist ${isActive ? 'text-indigo-600' : 'text-slate-900'}`}>{exp.company}</span>

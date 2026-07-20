@@ -8,12 +8,14 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
   
   body {
     background-color: #fcfcfc;
     color: #111827;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
 
   ::selection {

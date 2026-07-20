@@ -29,7 +29,7 @@ export default function About() {
             </h2>
             <div className="space-y-6 text-lg md:text-xl text-slate-400 font-inter font-light leading-relaxed">
               <p>
-                Great products aren't built on brilliant ideas—they're built on deeply understanding a problem. My engineering background helps me collaborate closely with developers to ship fast and iterate, but I believe the best decisions always begin with customer insight. My goal is simple: validate early, ship small, and build products that create measurable business impact.
+                Great products aren't built on brilliant ideas-they're built on deeply understanding a problem. My engineering background helps me collaborate closely with developers to ship fast and iterate, but I believe the best decisions always begin with customer insight. My goal is simple: validate early, ship small, and build products that create measurable business impact.
               </p>
             </div>
 
@@ -54,7 +54,7 @@ export default function About() {
             {[
               {
                 title: "Customer First",
-                description: "Every roadmap should begin with understanding user pain—not assumptions."
+                description: "Every roadmap should begin with understanding user pain-not assumptions."
               },
               {
                 title: "Build to Learn",
