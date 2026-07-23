@@ -104,7 +104,7 @@ export default function Contact() {
             className="lg:w-2/3"
           >
             <div className="bg-white p-8 md:p-12 rounded-[2.5rem] border border-slate-200 shadow-xl shadow-slate-200/50 relative overflow-hidden">
-              <form className="relative z-10 flex flex-col gap-6" onSubmit={onSubmit}>
+              <form suppressHydrationWarning className="relative z-10 flex flex-col gap-6" onSubmit={onSubmit}>
                 <div className="flex flex-col md:flex-row gap-6">
                   <div className="flex-1">
                     <label className="text-xs font-bold uppercase tracking-widest font-geist text-slate-500 mb-2 block ml-1">Name</label>

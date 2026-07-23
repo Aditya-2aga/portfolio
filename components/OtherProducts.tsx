@@ -14,7 +14,7 @@ export default function OtherProducts() {
   });
 
   return (
-    <section ref={containerRef} id="other-projects" className="relative bg-slate-50 border-t border-slate-100">
+    <section ref={containerRef} style={{ position: "relative" }} id="other-projects" className="relative bg-slate-50 border-t border-slate-100">
       <div className="py-24 px-6 max-w-7xl mx-auto">
         <div className="mb-20">
           <h2 className="text-4xl md:text-6xl font-bold font-geist text-slate-900 mb-4 tracking-tight">

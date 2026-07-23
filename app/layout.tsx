@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${geistSans.variable} ${inter.variable} font-sans antialiased bg-[#0a0a0a] text-slate-200 overflow-x-hidden selection:bg-blue-500/30 selection:text-blue-200`}>
+      <body className={`${geistSans.variable} ${inter.variable} font-sans antialiased bg-[#0a0a0a] text-slate-200 overflow-x-clip selection:bg-blue-500/30 selection:text-blue-200`}>
         <SmoothScrolling>
           {children}
         </SmoothScrolling>
