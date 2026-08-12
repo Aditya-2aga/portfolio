@@ -7,6 +7,25 @@ export const heroMetrics = [
 
 export const featuredProducts = [
   {
+    id: "aureeture",
+    slug: "aureeture",
+    title: "AureetureAI",
+    tagline: "AI Native Hiring & Talent Discovery Platform",
+    domain: "HR Tech",
+    stage: "0→1 MVP",
+    role: "Product Lead",
+    teamSize: "Product, Engineering",
+    primaryKPI: "1,000+ Talents Onboarded",
+    usersImpacted: "Recruiters & Fresher Candidates",
+    problem: "Recruiters struggle to discover the right fresher talent beyond conventional keyword-based searches, while candidates face challenges in showcasing their true potential.",
+    solution: "Designed and launched an AI-powered two-sided talent marketplace featuring candidate profiles, recruiter discovery workflows, and AI-native candidate matching.",
+    impact: "Scaled the platform to 1,000+ talents with early recruiter adoption, successfully validating initial marketplace demand for fresher hiring.",
+    metrics: [
+      { label: "Talents Onboarded", value: "1,000+" },
+      { label: "Recruiter Adoption", value: "Validated" }
+    ],
+  },
+  {
     id: "nexflow",
     slug: "nexflow",
     title: "NexFlow",
@@ -66,6 +85,22 @@ export const featuredProducts = [
 ];
 
 export const experienceData = [
+  {
+    role: "Product Lead",
+    company: "AureetureAI",
+    period: "Mar 2026 – Present",
+    domain: "HR Tech / AI Marketplace",
+    stage: "0 → 1 MVP",
+    teamSize: "Product & Partnerships",
+    businessContext: "AureetureAI is an AI-powered talent discovery platform focused on fresher hiring, bridging the gap between recruiters and early-career talent.",
+    ownership: "Owned product strategy and complete MVP development to launch, translating hiring pain points into product requirements, workflows, and roadmap priorities.",
+    collaboration: "Built early distribution partnerships with PW IoI and Sheriyans Coding School to expand talent acquisition channels.",
+    customerImpact: "Validated both sides of the hiring marketplace and shaped product priorities around candidate discovery and recruiter workflows.",
+    growth: "Building a marketplace requires solving the cold-start problem early. Strategic partnerships were instrumental in building the initial candidate supply.",
+    impact: "Onboarded 1,000+ talents and drove early recruiter adoption, strengthening the early candidate pipeline.",
+    metrics: ["1,000+ Talents", "Recruiter Adoption", "2+ Key Partnerships"],
+    technologies: ["Product Strategy", "Roadmapping", "Marketplace Dynamics", "Partnerships"]
+  },
   {
     role: "Founding Team – Product",
     company: "Nexerve",

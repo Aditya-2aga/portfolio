@@ -51,6 +51,85 @@ export interface CaseStudy {
 
 export const caseStudies: CaseStudy[] = [
   {
+    slug: "aureeture",
+    title: "AureetureAI",
+    tagline: "AI Native Hiring & Talent Discovery Platform",
+    role: "Product Lead",
+    timeline: "Mar 2026 – Present",
+    date: "2026-08-12",
+    content: [
+      {
+        type: "executiveSummary",
+        data: {
+          role: "Product Lead",
+          team: "Product & Engineering",
+          timeline: "Mar 2026 – Present",
+          stage: "0 → 1 MVP to V2",
+          users: "Recruiters & Fresher Candidates",
+          goal: "Simplify and enhance fresher hiring by building a two-sided marketplace that leverages an AI Digital Twin, Agentic ATS Execution, and continuous candidate calibration.",
+          northStar: "Agent-Driven Application Success",
+          outcome: "Scaled platform to 1,000+ talents, secured early recruiter adoption, and deployed a 4-node microservices architecture powering CARO AI."
+        }
+      },
+      { type: "heading2", text: "Executive Overview" },
+      { type: "paragraph", text: "Traditional hiring platforms rely heavily on keyword-based searches, which often fail to capture the true potential of fresher candidates who lack extensive work history. AureetureAI was built to bridge this gap by offering a deeply technical, AI-native talent discovery platform. Rather than just matching keywords, AureetureAI builds a continuously evolving 'Digital Twin' of each candidate, evaluating skills, intent, and fit more effectively through AI Calibration Interviews and real-world project performance." },
+      { type: "heading2", text: "Talent-Side Platform & Digital Twin" },
+      { type: "paragraph", text: "The candidate experience shifts from manual resume uploading to continuous capability building. The platform centers around the Digital Twin—an evidence-based representation of a candidate built from skills, experience, verified project performance, and AI Interview results. Key features include:" },
+      { type: "paragraph", text: "• AI Calibration Interview: Generated from actual profile data to test technical depth and problem-solving, triggering delta-focused follow-ups on profile changes.\n• Dynamic Profile Score: A continuously responsive CIBIL-style score grading candidates into Tiered bands (<600, 600-700, >700).\n• AI-Tailored Resume: Generates a per-opportunity resume from the Digital Twin and Target JD without inventing information.\n• ATS Execution Agent: An agentic system that opens ATS portals (Greenhouse, Lever, Workday), fills fields, uploads the resume, and manages application status via a queued worker model (HITL approved)." },
+      { type: "heading2", text: "Enterprise-Side Platform (CARO AI)" },
+      { type: "paragraph", text: "For recruiters, the platform provides deep analytical tooling via CARO AI. Instead of presenting a bare score, CARO ranks candidates with explained reasoning and proactively recommends next actions (e.g., technical assessment, human interview). It also operates an Interview Marketplace to identify appropriate human interviewers and folds post-interview feedback back into the candidate's Digital Twin." },
+      { type: "heading2", text: "Microservices Topology & Architecture" },
+      { type: "paragraph", text: "The platform operates on a four-node, event-driven microservice ecosystem designed for scale and agentic reliability:" },
+      { type: "paragraph", text: "1. Client Layer: Next.js 15 Frontend (App Router, SSR + Client).\n2. API & Orchestration Layer: Node.js / Express API acting as the central orchestrator.\n3. AI Intelligence Layer: Python / FastAPI AI Engine housing CARO and the Digital Twin generation logic, interfacing with OpenRouter (LLM Gateway) and Celery Workers for heavy ML tasks.\n4. Data Layer: PostgreSQL (Prisma ORM) for relational data and Redis (BullMQ + Celery Broker) for caching and asynchronous queue management." },
+      { type: "heading2", text: "Product Strategy & Decisions" },
+      { type: "paragraph", text: "The strategy was to build a sophisticated two-sided marketplace. A core challenge was ensuring the reliability of the AI Application Execution Agent while navigating complex CAPTCHA/MFA environments." },
+      {
+        type: "decisionLog",
+        data: {
+          context: "Agentic applications face significant friction from ATS security measures (CAPTCHA/OTP).",
+          constraint: "Silent failures degrade trust; false reporting ruins the user experience.",
+          alternatives: ["Attempt to aggressively bypass all security", "Limit supported ATS platforms completely", "Implement a 'Further Action Required' state"],
+          decision: "Treated CAPTCHA/MFA as expected environment limitations. Applications enter a controlled 'further action required' state rather than silently failing.",
+          expectedImpact: "Maintains absolute transparency with the candidate regarding their application status pipeline.",
+          actualOutcome: "High trust and reliability in the Application Pipeline (discovery → review → approval → submission → outcome)."
+        }
+      },
+      { type: "heading2", text: "Scope and Tradeoffs" },
+      { type: "paragraph", text: "The MVP and V2 focused on robust architecture and agentic execution mechanics rather than broad platform coverage." },
+      {
+        type: "mvpScope",
+        data: {
+          ideas: ["Support all 50+ ATS platforms", "Digital Twin", "Agentic Apply", "CARO AI Ranking", "Video Interviews", "Skill Assessments"],
+          prioritized: ["Digital Twin", "Agentic Apply (Greenhouse, Lever, Workday)", "CARO AI Ranking", "AI Calibration Interview"],
+          mvp: ["Digital Twin", "Agentic Apply (Top 3 ATS)", "CARO AI Ranking", "AI Calibration Interview"]
+        }
+      },
+      {
+        type: "tradeoffs",
+        data: {
+          didNotBuild: "Broad ATS site coverage",
+          reason: "An 'ATS-first automation strategy' prioritized Greenhouse, Lever, and Workday for reliability and scale over attempting to support every obscure career portal.",
+          impactOnMVP: "Allowed the engineering team to stabilize the agentic worker queue and ensure high success rates on the most critical platforms."
+        }
+      },
+      { type: "heading2", text: "Retrospective" },
+      { type: "paragraph", text: "Building AureetureAI reinforced the importance of creating evidence-based talent systems. The feedback loop (Profile → Digital Twin → Validation → Projects → Score → Opportunities → Application → Real-World Outcome → Digital Twin) proved to be the core flywheel." },
+      {
+        type: "retrospective",
+        data: {
+          mistakes: [
+             "Underestimated the initial complexity of tuning OpenRouter AI models for precise Resume tailoring without hallucinations."
+          ],
+          techDebt: "Need to continually upgrade the execution agent to handle dynamically changing ATS DOM structures.",
+          lessons: [
+            "Human-in-the-loop (HITL) approval before auto-apply execution is mandatory for trust.",
+            "AI is most effective when it augments a recruiter's workflow (e.g., CARO explaining reasoning) rather than operating as a black box."
+          ]
+        }
+      }
+    ]
+  },
+  {
     slug: "nexflow",
     title: "NexFlow",
     tagline: "AI-powered Project Management Platform",
